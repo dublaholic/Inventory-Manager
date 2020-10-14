@@ -11,42 +11,41 @@ namespace Inventory_Management_System
     public class Product
     {
 
-        public Product(int ProductID, string Name, decimal Price, int inStock, int Min, int Max, )
+        public Product(int ProductID, string Name, decimal Price, int InStock, int Min, int Max, BindingList<Part> AssociatedParts)
         {
-            
+
             this.productID = ProductID;
             this.name = Name;
             this.price = Price;
-            this.InStock = inStock;
+            this.inStock = InStock;
             this.min = Min;
             this.max = Max;
-            
-            
-
+            this.associatedParts = AssociatedParts;
         }
 
 
-        public static BindingList<Part> associatedParts = new BindingList<Part>();
+        public BindingList<Part> associatedParts { get; set; } = new BindingList<Part>();
         public int productID { get; set; }
         public string name { get; set; }
         public decimal price { get; set; }
-        public int InStock { get; set; }
+        public int inStock { get; set; }
         public int min { get; set; }
         public int max { get; set; }
 
 
-        public static void AddAssociatedPart(Part part)
+        public void AddAssociatedPart(Part part)
         {
             associatedParts.Add(part);
+            
         }
-        public static bool removeAssociatedPart(int partID)
+        public bool removeAssociatedPart(int partID)
         {
             bool remove = false;
             foreach (Part part in associatedParts)
             {
                 if (part.PartID == partID)
                 {
-                    associatedParts.Remove(part);
+                    associatedParts.Add(part);
                     return remove = true;
                 }
                 else
@@ -56,7 +55,7 @@ namespace Inventory_Management_System
             }
             return remove;
         }
-        public static Part LookupAssociatedPart(int partID)
+        public Part LookupAssociatedPart(int partID)
         {
             foreach (Part part in associatedParts)
             {

@@ -12,7 +12,7 @@ namespace Inventory_Management_System
 {
     public partial class Products : Form
     {
-        BindingList<Part> tempParts = new BindingList<Part>();
+        BindingList<Part> tempPart = new BindingList<Part>();
         
         bool validated = false;
         bool NameValid = false;
@@ -26,7 +26,7 @@ namespace Inventory_Management_System
             ProductsScreenLoad();
             formatDGV(dgvCandidateParts);
             formatDGV(dgvAssociatedProducts);
-            int productid = Inventory.AllParts.Count + 1;
+            int productid = Inventory.AllProducts.Count + 1;
             txtID.Text = productid.ToString();
 
         }
@@ -41,7 +41,7 @@ namespace Inventory_Management_System
         public void ProductsScreenLoad()
         {
             dgvCandidateParts.DataSource = Inventory.AllParts;
-            dgvAssociatedProducts.DataSource = tempParts;
+            dgvAssociatedProducts.DataSource = tempPart;
 
         }
 
@@ -87,7 +87,7 @@ namespace Inventory_Management_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Part partToProduct = (Part)dgvCandidateParts.CurrentRow.DataBoundItem;
-            tempParts.Add(partToProduct);
+            tempPart.Add(partToProduct);
             
         }
 
@@ -96,13 +96,8 @@ namespace Inventory_Management_System
             Validate();
             if (validated == true)
             {
-                Product productToAdd = new Product((Inventory.AllProducts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text));
+                Product productToAdd = new Product((Inventory.AllProducts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), tempPart);
                 Inventory.addProduct(productToAdd);
-
-                foreach (Part part in tempParts)
-                {
-                    Product.AddAssociatedPart(part);
-                }
                 this.Close();
             }
             else

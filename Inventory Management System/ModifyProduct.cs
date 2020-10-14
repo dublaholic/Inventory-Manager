@@ -23,24 +23,18 @@ namespace Inventory_Management_System
         public ModifyProduct(Product ModProduct)
         {
             InitializeComponent();
-            ProductsScreenLoad();
-            formatDGV(dgvCandidateParts);
-            formatDGV(dgvAssociatedProducts);
+
             txtID.Text = ModProduct.productID.ToString();
             txtName.Text = ModProduct.name.ToString();
-            txtInventory.Text = ModProduct.InStock.ToString();
+            txtInventory.Text = ModProduct.inStock.ToString();
             txtPrice.Text = ModProduct.price.ToString();
             txtMin.Text = ModProduct.min.ToString();
             txtMax.Text = ModProduct.max.ToString();
-            foreach(Part part in Product.associatedParts)
-            {
-                tempParts.Add(Product.LookupAssociatedPart(part.PartID));
-            }
-            
-            
-            
-            
-                        
+            tempParts = ModProduct.associatedParts;
+            ProductsScreenLoad();
+            formatDGV(dgvCandidateParts);
+            formatDGV(dgvAssociatedProducts);
+
         }
         public void formatDGV(DataGridView d)
         {
@@ -183,13 +177,7 @@ namespace Inventory_Management_System
             Validate();
             if (validated == true)
             {
-                Product productToUpdate = new Product((Inventory.AllProducts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text));
-                
-                foreach (Part part in tempParts)
-                {
-                    Product.AddAssociatedPart(part);
-                }
-
+                Product productToUpdate = new Product((Inventory.AllProducts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), tempParts);
                 Inventory.UpdateProduct(Int32.Parse(txtID.Text), productToUpdate);
                 this.Close();
 
