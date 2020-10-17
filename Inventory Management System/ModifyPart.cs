@@ -184,13 +184,13 @@ namespace Inventory_Management_System
             {
                 if (rdoInHouse.Checked)
                 {
-                    InHouse inHouse = new InHouse(Int32.Parse(txtID.Text), txtName.Text, Int32.Parse(txtPriceCost.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), Int32.Parse(txtMachineCompany.Text));
+                    InHouse inHouse = new InHouse(Int32.Parse(txtID.Text), txtName.Text, decimal.Parse(txtPriceCost.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), Int32.Parse(txtMachineCompany.Text));
                     Inventory.updatePart(Int32.Parse(txtID.Text), inHouse);
 
                 }
                 else
                 {
-                    Outsourced outsourced = new Outsourced(Int32.Parse(txtID.Text), txtName.Text, Int32.Parse(txtPriceCost.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), txtMachineCompany.Text);
+                    Outsourced outsourced = new Outsourced(Int32.Parse(txtID.Text), txtName.Text, decimal.Parse(txtPriceCost.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), txtMachineCompany.Text);
                     Inventory.updatePart(Int32.Parse(txtID.Text), outsourced);
 
                 }

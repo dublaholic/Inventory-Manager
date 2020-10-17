@@ -46,7 +46,7 @@ namespace Inventory_Management_System
         private void rdoOutscourced_CheckedChanged(object sender, EventArgs e)
 
         {
-            lblMachineCompany.Text = "Company ID";
+            lblMachineCompany.Text = "Company Name";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -56,13 +56,13 @@ namespace Inventory_Management_System
             {
                 if (rdoInHouse.Checked)
                 {
-                    InHouse inHouse = new InHouse((Inventory.AllParts.Count + 1), txtName.Text, Int32.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), Int32.Parse(txtMachineCompany.Text));
+                    InHouse inHouse = new InHouse((Inventory.AllParts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), Int32.Parse(txtMachineCompany.Text));
                     Inventory.addPart(inHouse);
 
                 }
                 else
                 {
-                    Outsourced outsourced = new Outsourced((Inventory.AllParts.Count + 1), txtName.Text, Int32.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), txtMachineCompany.Text);
+                    Outsourced outsourced = new Outsourced((Inventory.AllParts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), txtMachineCompany.Text);
                     Inventory.addPart(outsourced);
 
                 }
