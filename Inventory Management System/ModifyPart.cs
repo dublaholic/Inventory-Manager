@@ -25,6 +25,7 @@ namespace Inventory_Management_System
         {
             InitializeComponent();
             rdoInHouse.Checked = true;
+            txtMachineCompany.Text = "Machine ID";
             txtID.Text = inHouse.PartID.ToString();
             txtName.Text = inHouse.Name.ToString();
             txtInventory.Text = inHouse.InStock.ToString();
@@ -36,7 +37,8 @@ namespace Inventory_Management_System
         public ModifyPart(Outsourced outsourced)
         {
             InitializeComponent();
-            rdoOutscourced.Checked = true; 
+            rdoOutscourced.Checked = true;
+            txtMachineCompany.Text = "Company Name";
             txtID.Text = outsourced.PartID.ToString();
             txtName.Text = outsourced.Name.ToString();
             txtInventory.Text = outsourced.InStock.ToString();
@@ -51,6 +53,37 @@ namespace Inventory_Management_System
             if (NameValid == true && InventoryValid == true && PriceCostValid == true && MinValid == true && MaxValid == true && MachineCompanyValid == true)
             {
                 validated = true;
+            }
+        }
+        private void ValidateRDOChange()
+        {
+            if (rdoOutscourced.Checked)
+            {
+                if (!string.IsNullOrWhiteSpace(txtMachineCompany.Text))
+                {
+                    txtMachineCompany.BackColor = System.Drawing.Color.White;
+                    MachineCompanyValid = true;
+                }
+                else
+                {
+                    txtMachineCompany.BackColor = System.Drawing.Color.Salmon;
+                    MachineCompanyValid = false;
+                }
+            }
+
+            if (rdoInHouse.Checked)
+            {
+                int numberCheck;
+                if (int.TryParse(txtMachineCompany.Text, out numberCheck))
+                {
+                    txtMachineCompany.BackColor = System.Drawing.Color.White;
+                    MachineCompanyValid = true;
+                }
+                else
+                {
+                    txtMachineCompany.BackColor = System.Drawing.Color.Salmon;
+                    MachineCompanyValid = false;
+                }
             }
         }
 
@@ -164,12 +197,14 @@ namespace Inventory_Management_System
 
         private void rdoInHouse_CheckedChanged(object sender, EventArgs e)
         {
-            lblMachineCompany.Text = "Company ID";
+            lblMachineCompany.Text = "Machine ID";
+            ValidateRDOChange();
         }
 
         private void rdoOutscourced_CheckedChanged(object sender, EventArgs e)
         {
-            lblMachineCompany.Text = "Machine ID";
+            lblMachineCompany.Text = "Company Name";
+            ValidateRDOChange();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -203,7 +203,7 @@
             // txtMachineCompany
             // 
             this.txtMachineCompany.BackColor = System.Drawing.Color.Salmon;
-            this.txtMachineCompany.Location = new System.Drawing.Point(95, 249);
+            this.txtMachineCompany.Location = new System.Drawing.Point(120, 249);
             this.txtMachineCompany.Name = "txtMachineCompany";
             this.txtMachineCompany.Size = new System.Drawing.Size(100, 20);
             this.txtMachineCompany.TabIndex = 16;

@@ -52,7 +52,7 @@
             // 
             // txtMachineCompany
             // 
-            this.txtMachineCompany.Location = new System.Drawing.Point(95, 244);
+            this.txtMachineCompany.Location = new System.Drawing.Point(130, 244);
             this.txtMachineCompany.Name = "txtMachineCompany";
             this.txtMachineCompany.Size = new System.Drawing.Size(100, 20);
             this.txtMachineCompany.TabIndex = 33;
