@@ -177,7 +177,7 @@ namespace Inventory_Management_System
             Validate();
             if (validated == true)
             {
-                Product productToUpdate = new Product((Inventory.AllProducts.Count + 1), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), tempParts);
+                Product productToUpdate = new Product(Int32.Parse(txtID.Text), txtName.Text, decimal.Parse(txtPrice.Text), Int32.Parse(txtInventory.Text), Int32.Parse(txtMin.Text), Int32.Parse(txtMax.Text), tempParts);
                 Inventory.UpdateProduct(Int32.Parse(txtID.Text), productToUpdate);
                 this.Close();
 

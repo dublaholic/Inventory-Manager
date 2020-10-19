@@ -12,3 +12,17 @@ C:\Users\dubla\Desktop\C968\Project\Inventory Management System\Inventory Manage
 C:\Users\dubla\Desktop\C968\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.exe
 C:\Users\dubla\Desktop\C968\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.pdb
 C:\Users\dubla\Desktop\C968\Project\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.Products.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\bin\Debug\Inventory Management System.exe.config
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\bin\Debug\Inventory Management System.exe
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\bin\Debug\Inventory Management System.pdb
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.csprojAssemblyReference.cache
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.FRMMainScreen.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.ModifyPart.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.ModifyProduct.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.Parts.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.Products.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory_Management_System.Properties.Resources.resources
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.csproj.GenerateResource.cache
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.csproj.CoreCompileInputs.cache
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.exe
+D:\Projects\Project c968\Inventory Management System\Inventory Management System\obj\Debug\Inventory Management System.pdb
